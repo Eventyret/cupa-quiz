@@ -1,0 +1,18 @@
+.enabled {
+  margin: 1rem;
+}
+
+.disabled {
+  color: var(--light-gray);
+  margin: 1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  margin: 0 1rem 0 1rem;
+}
+.parent {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

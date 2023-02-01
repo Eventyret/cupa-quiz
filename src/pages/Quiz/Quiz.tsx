@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getQuestions } from "../../api/api";
 import { Activity } from "../../api/api.model";
+
 
 export const Quiz = () => {
   const { type } = useParams<{ type: string }>();
@@ -9,6 +11,13 @@ export const Quiz = () => {
     quizName: "",
     heading: "",
   });
+  useEffect(() => {
+    // Making another async function instead of make useEffect async.
+    const currentQuiz = async () => {
+      const { name, heading, activities } = await getQuestions();
+      const
+    };
+  }, [currentQuiz]);
 
-  return <div></div>;
+  return <div>{type}</div>;
 };
