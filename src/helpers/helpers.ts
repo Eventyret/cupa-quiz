@@ -7,7 +7,3 @@ export const isDev = (): boolean => {
 };
 
 export const formatQuizType = (quizType: string): string => quizType.split("-").join("");
-
-export const isQuestionRoundGuard = (question: Question | QuestionRound): question is QuestionRound => {
-  return (question as QuestionRound).questions !== undefined;
-};
