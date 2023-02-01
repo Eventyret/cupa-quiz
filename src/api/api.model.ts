@@ -7,13 +7,19 @@ export interface Question {
 }
 
 export interface Activity {
-  activity_name: string;
+  activity_name: "Activity One" | "Activity Two";
   order: number;
-  questions: Question[];
+  questions: Question[] | QuestionRound[];
 }
 
 export interface ApiResponse {
   name: string;
   heading: string;
   activities: Activity[];
+}
+
+export interface QuestionRound {
+  round_title: string;
+  order: number;
+  questions: Question[];
 }
