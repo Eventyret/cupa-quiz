@@ -15,12 +15,11 @@ export const Quiz = () => {
     // Making another async function instead of make useEffect async.
     const getQuiz = async () => {
       const { name, heading, activities } = (await getQuestions()) || {};
+
       // Could be extracted to helper function to clean up readability of useEffect
       const quiz = activities?.filter((activity) => {
-        console.log(activity.activity_name);
         return activity.activity_name.toLowerCase() === formatQuizType(type ? type : "");
       });
-      console.log(quiz);
       if (quiz) setCurrentQuiz(quiz[0]);
 
       // Could do some more if checks here and not infer that it never will be undefined, technically we would have
