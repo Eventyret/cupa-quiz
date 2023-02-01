@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Quiz } from "../../models";
+import { Quiz } from "../../types";
 import { Question } from "../Question/Question";
 import styles from "./ActivityOne.module.css";
 import { ActivityOneResults } from "./Results/ActivityOneResults";
