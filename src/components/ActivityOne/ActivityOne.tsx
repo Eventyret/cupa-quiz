@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Quiz } from "../../models";
 import { Question } from "../Question/Question";
 import styles from "./ActivityOne.module.css";
+import { ActivityOneResults } from "./Results/ActivityOneResults";
 
 export const ActivityOne = ({ quiz }: Quiz) => {
   const [quizState, setQuizState] = useState<{ question: number; answers: string[] }>({ question: 0, answers: [] });
@@ -28,9 +29,8 @@ export const ActivityOne = ({ quiz }: Quiz) => {
             INCORRECT
           </button>
         </div>
-      ) : (
-        <h2>Nothing here</h2>
-      )}
+      ) : null}
+      {quiz && quizState.question === quiz.questions.length ? <ActivityOneResults results={quizState.answers} /> : null}
     </div>
   );
 };

@@ -1,0 +1,19 @@
+.main {
+  text-align: center;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 2rem;
+}
+
+.results:first-of-type {
+  border-top: 1px solid var(--primary-color);
+}
+
+.homeBtn {
+  margin: 2rem;
+  display: inline-block;
+}
