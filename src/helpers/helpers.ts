@@ -6,4 +6,4 @@ export const isDev = (): boolean => {
   return development;
 };
 
-export const formatQuizType = (quizType: string): string => quizType.split("_").join("");
+export const formatQuizType = (quizType: string): string => quizType.split("-").join("");
