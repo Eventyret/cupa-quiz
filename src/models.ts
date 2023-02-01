@@ -9,7 +9,7 @@ export interface Question {
 export interface Activity {
   activity_name: "Activity One" | "Activity Two";
   order: number;
-  questions: Question[] | QuestionRound[];
+  questions: Question[];
 }
 
 export interface ApiResponse {
@@ -18,10 +18,8 @@ export interface ApiResponse {
   activities: Activity[];
 }
 
-export interface QuestionRound {
+export interface QuestionRound extends Question {
   round_title: string;
-  order: number;
-  questions: Question[];
 }
 
 export interface Quiz {
