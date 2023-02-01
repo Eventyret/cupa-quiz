@@ -1,5 +1,6 @@
 :root {
   --primary-color: #87cefa;
+  --light-gray: #d3d3d3;
 }
 html {
   font-size: 62.5%;
