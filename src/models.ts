@@ -23,3 +23,7 @@ export interface QuestionRound {
   order: number;
   questions: Question[];
 }
+
+export interface Quiz {
+  quiz: Activity;
+}
