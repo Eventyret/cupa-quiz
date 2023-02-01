@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getQuestions } from "../../api/api";
-import { Activity } from "../../api/api.model";
+import { Activity } from "../../models";
 import { formatQuizType } from "../../helpers/helpers";
 
 export const Quiz = () => {
