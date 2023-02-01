@@ -1,4 +1,4 @@
-import { Activity } from "../api/api.model";
+import { Activity, Question, QuestionRound } from "../models";
 
 const development: boolean = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
@@ -7,3 +7,7 @@ export const isDev = (): boolean => {
 };
 
 export const formatQuizType = (quizType: string): string => quizType.split("-").join("");
+
+export const isQuestionRoundGuard = (question: Question | QuestionRound): question is QuestionRound => {
+  return (question as QuestionRound).questions !== undefined;
+};
