@@ -10,8 +10,9 @@ export const getQuestions = async (): Promise<ApiResponse | undefined> => {
   try {
     const response = await fetch(isDev() ? `${proxyURL}${url}` : url);
     if (response.ok) return await response.json();
-  } catch (error) {
-    // Adding propper error handling for now we will just console log
-    console.error(error);
+    new Error(response.status.toString());
+    // if response is not ok we want to throw new Error(""); pass it the error and catch it below
+  } catch (error: any) {
+    return error;
   }
 };

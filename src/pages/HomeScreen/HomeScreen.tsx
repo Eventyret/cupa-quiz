@@ -8,13 +8,31 @@ export const HomeScreen = () => {
     name: "",
     heading: "",
   });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
-      const { name, heading } = (await getQuestions()) || {};
-      setMetaData({ name: name!, heading: heading! });
+      try {
+        const { name, heading } = (await getQuestions()) || {};
+        setMetaData({ name: name!, heading: heading! });
+      } catch (error) {
+        setError(error as Error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div className={styles.main}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.main}> Error: {(error as Error).message}</div>;
+  }
+
   return (
     <div className={styles.main}>
       <h1>{metaData.name}</h1>
