@@ -10,7 +10,7 @@ This is a tech test for Cambridge University.
   - [👮‍♂️ Error Handling](#️-error-handling)
   - [🔨 What could be done better](#-what-could-be-done-better)
   - [🚢 Scale](#-scale)
-  - [Testing](#testing)
+  - [🧪 Testing](#-testing)
   - [🪣 Deployment AWS S3 Bucket (With Github Actions)](#-deployment-aws-s3-bucket-with-github-actions)
     - [👩 Setup IAM Policy \& User for Github Actions](#-setup-iam-policy--user-for-github-actions)
       - [📝 Creating a IAM Policy](#-creating-a-iam-policy)
@@ -59,9 +59,11 @@ For Deployment kubernetes can be used to deploy the application, and also to sca
 This can be done by adding more pods and also adding more replicas.
 I also think in scale using a propper state management is needed. Any large application will have issues with manage state.
 
-## Testing
+## 🧪 Testing
 
-I did not supply any tests
+I only did some basics BDD tests in this scenario making sure APP renders and we have a defined function.
+Sadly i ran out of time to do more testing.
+I feel testing is **_very_** important as a developer and wish i could do more testing.
 
 ## 🪣 Deployment AWS S3 Bucket (With Github Actions)
 
