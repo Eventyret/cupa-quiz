@@ -1,5 +1,17 @@
 # Cupa / Errors find
 
+## Optimizations
+
+## Error Handling
+
+## Scale
+
+## Deployment AWS S3 Bucket (With Github Actions)
+
+## Deployment to Github Pages
+
+## Deployment using Docker
+
 ## CORS Issues
 
 Cors issues was introduced in local development.
