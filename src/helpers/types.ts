@@ -32,6 +32,4 @@ export interface QuizState {
   question: number;
   round: number;
   answers: string[][];
-  showRound: boolean;
-  roundChange: boolean;
 }
