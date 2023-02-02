@@ -65,6 +65,8 @@ I only did some basics BDD tests in this scenario making sure APP renders and we
 Sadly i ran out of time to do more testing.
 I feel testing is **_very_** important as a developer and wish i could do more testing.
 
+You can run the tests by running `npm run test` or `yarn test`
+
 ## 🪣 Deployment AWS S3 Bucket (With Github Actions)
 
 This step takes into account you have a AWS account and have setup your credentials.
