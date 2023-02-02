@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import { getQuestions } from "../../api/api";
 import { ActivityOne } from "../../components/ActivityOne/ActivityOne";
 import { ActivityTwo } from "../../components/ActivityTwo/ActivityTwo";
-import { formatQuizType } from "../../helpers/helpers";
-import { Activity } from "../../types";
+import { ACTIVITY } from "../../helpers/enums";
+import { extractActivity } from "../../helpers/helpers";
+import { Activity } from "../../helpers/types";
 
 export const Quiz = () => {
   const { type } = useParams<{ type: string }>();
@@ -14,9 +15,9 @@ export const Quiz = () => {
     // Making another async function instead of make useEffect async.
     const getQuiz = async () => {
       const { activities } = (await getQuestions()) || {};
-      console.log(formatQuizType(type!));
-      const activity = activities?.find((activity) => activity.activity_name.toLocaleLowerCase() === formatQuizType(type!));
-      console.log(activity);
+      // Getting Getting last part of Activity so we match one and one or two and two
+      if (!activities || !type) return;
+      const activity = extractActivity(activities, type);
       setCurrentQuiz(activity!);
     };
     getQuiz();
@@ -24,8 +25,8 @@ export const Quiz = () => {
 
   return (
     <div>
-      {currentQuiz && currentQuiz.activity_name === "Activity One" ? <ActivityOne quiz={currentQuiz} /> : null}
-      {currentQuiz && currentQuiz.activity_name === "Activity Two" ? <ActivityTwo quiz={currentQuiz} /> : null}
+      {currentQuiz && currentQuiz.activity_name === ACTIVITY.ONE ? <ActivityOne quiz={currentQuiz} /> : null}
+      {currentQuiz && currentQuiz.activity_name === ACTIVITY.TWO ? <ActivityTwo quiz={currentQuiz} /> : null}
     </div>
   );
 };

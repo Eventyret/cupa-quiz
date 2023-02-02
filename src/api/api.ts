@@ -1,5 +1,5 @@
 import { isDev } from "../helpers/helpers";
-import { ApiResponse } from "../types";
+import { ApiResponse } from "../helpers/types";
 
 export const getQuestions = async (): Promise<ApiResponse | undefined> => {
   // Should fetch from secret but we are using hardcoded url here

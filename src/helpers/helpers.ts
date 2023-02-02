@@ -1,4 +1,4 @@
-import { Activity } from "../types";
+import { Activity } from "./types";
 
 const development: boolean = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
