@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getQuestions } from "../../api/api";
+import { getQuestions } from "../../helpers/api";
 import { ChooseQuiz } from "../../components/Choose/Choose";
 import styles from "./HomeScreen.module.css";
 

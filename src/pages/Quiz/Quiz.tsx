@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getQuestions } from "../../api/api";
+import { getQuestions } from "../../helpers/api";
 import { ActivityOne } from "../../components/ActivityOne/ActivityOne";
 import { ActivityTwo } from "../../components/ActivityTwo/ActivityTwo";
 import { ACTIVITY } from "../../helpers/enums";
