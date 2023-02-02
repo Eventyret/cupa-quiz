@@ -1,20 +1,22 @@
 import { useState } from "react";
+import { QuizState } from "../../helpers/types";
 import { Question } from "../Question/Question";
 import styles from "./ActivityTwo.module.css";
 import { ActivityTwoResults } from "./Results/ActivityTwoResults";
 
 export const ActivityTwo = ({ quiz }: any) => {
-  const [quizState, setQuizState] = useState<{
-    question: number;
-    round: number;
-    answers: string[][];
-  }>({ question: 0, round: 0, answers: [] });
+  const [quizState, setQuizState] = useState<QuizState>({ question: 0, round: 0, answers: [] });
+
+  const getCurrentRound = () => {
+    return quiz!.questions[quizState.round] as any;
+  };
+
+  const getCurrentQuestion = () => {
+    return getCurrentRound().questions ? getCurrentRound().questions[quizState.question] : getCurrentRound();
+  };
 
   const getResult = (choice: boolean): "correct" | "incorrect" | undefined => {
-    if (!quiz) return;
-    const currentRound = quiz.questions[quizState.round] as any;
-
-    const currentQuestion = currentRound.questions ? currentRound.questions[quizState.question] : currentRound;
+    const currentQuestion = getCurrentQuestion();
     return currentQuestion.is_correct === choice ? "correct" : "incorrect";
   };
 
@@ -30,12 +32,13 @@ export const ActivityTwo = ({ quiz }: any) => {
       answers,
     });
   };
+
   return (
     <div>
       {quiz && quizState.round < quiz.questions.length ? (
         <div>
           <h1 className={styles.title}>Activity Two / {quiz.questions[quizState.round].round_title}</h1>
-          <h2 className={styles.questionNum}>{`Q${quizState.question + 1}.`}</h2>
+          <h2 className={styles.questionNum}>{`Q${quizState.question + 1}`}</h2>
           <Question questionText={quiz ? quiz.questions[quizState.round].questions[quizState.question].stimulus : ""} />
           <button className="answerBtn" onClick={() => choiceHandler(true)}>
             CORRECT
