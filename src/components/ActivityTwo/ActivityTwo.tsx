@@ -34,13 +34,13 @@ export const ActivityTwo = ({ quiz }: any) => {
     <div>
       {quiz && quizState.round < quiz.questions.length ? (
         <div>
-          <h1 className={styles.title}>Activity Two</h1>
-          <h2 className={styles.questionNum}>{quiz.questions[quizState.round].round_title}</h2>
+          <h1 className={styles.title}>Activity Two / {quiz.questions[quizState.round].round_title}</h1>
+          <h2 className={styles.questionNum}>{`Q${quizState.question + 1}.`}</h2>
           <Question questionText={quiz ? quiz.questions[quizState.round].questions[quizState.question].stimulus : ""} />
-          <button className={styles.answerButton} onClick={() => choiceHandler(true)}>
+          <button className="answerBtn" onClick={() => choiceHandler(true)}>
             CORRECT
           </button>
-          <button className={styles.answerButton} onClick={() => choiceHandler(false)}>
+          <button className="answerBtn" onClick={() => choiceHandler(false)}>
             INCORRECT
           </button>
         </div>

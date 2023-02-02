@@ -16,4 +16,12 @@
 .homeBtn {
   margin: 2rem;
   display: inline-block;
+  color: var(--primary-color);
+  border: none;
+  background: none;
+  padding: 2rem;
+}
+.homeBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
 }

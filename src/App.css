@@ -1,6 +1,7 @@
 :root {
   --primary-color: #87cefa;
   --light-gray: #d3d3d3;
+  --white: #fff;
 }
 html {
   font-size: 62.5%;
@@ -18,4 +19,16 @@ a,
 a:visited {
   text-decoration: none;
   color: var(--primary-color);
+}
+
+.answerBtn {
+  width: 50%;
+  border: none;
+  background: none;
+  color: var(--primary-color);
+  padding: 2rem;
+}
+.answerBtn:hover {
+  background: var(--primary-color);
+  color: var(--white);
 }

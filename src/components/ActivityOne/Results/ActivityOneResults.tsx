@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ACTIVITY } from "../../../helpers/enums";
 import styles from "./ActivityOneResults.module.css";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 export const ActivityOneResults = ({ results }: Props) => {
   return (
     <div className={styles.main}>
-      <h1>Activity One</h1>
+      <h1>{ACTIVITY.ONE}</h1>
       <h2>Results</h2>
       {results.map((result: string, index: number) => (
         <div className={styles.result}>

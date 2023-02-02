@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ACTIVITY } from "../../helpers/enums";
 import { Quiz } from "../../helpers/types";
 import { Question } from "../Question/Question";
 import styles from "./ActivityOne.module.css";
@@ -19,13 +20,13 @@ export const ActivityOne = ({ quiz }: Quiz) => {
     <div>
       {quiz && quizState.question < quiz.questions.length ? (
         <div>
-          <h1 className={styles.title}>Activity One</h1>
+          <h1 className={styles.title}>{ACTIVITY.ONE}</h1>
           <h2 className={styles.questionNum}>{`Q${quizState.question + 1}`}.</h2>
           <Question questionText={quiz ? quiz.questions[quizState.question].stimulus : ""} />
-          <button className={styles.answerButton} onClick={() => choiceHandler(true)}>
+          <button className="answerBtn" onClick={() => choiceHandler(true)}>
             CORRECT
           </button>
-          <button className={styles.answerButton} onClick={() => choiceHandler(false)}>
+          <button className="answerBtn" onClick={() => choiceHandler(false)}>
             INCORRECT
           </button>
         </div>

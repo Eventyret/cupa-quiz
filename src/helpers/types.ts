@@ -25,3 +25,5 @@ export interface QuestionRound extends Question {
 export interface Quiz {
   quiz: Activity;
 }
+
+export type Result = "correct" | "incorrect";
