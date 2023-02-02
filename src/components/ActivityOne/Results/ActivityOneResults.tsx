@@ -12,7 +12,7 @@ export const ActivityOneResults = ({ results }: Props) => {
       <h1>{ACTIVITY.ONE}</h1>
       <h2>Results</h2>
       {results.map((result: string, index: number) => (
-        <div className={styles.result}>
+        <div className={styles.result} key={index}>
           <span>{`Q${index + 1}`}</span>
           <span>{result}</span>
         </div>
